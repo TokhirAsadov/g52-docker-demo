@@ -1,0 +1,20 @@
+# Git filelari
+.git
+.gitignore
+
+# Maxfiy fayllar
+.env
+secrets/
+
+# Vaqtinchalik fayllar
+*.log
+tmp/
+
+# Ishlab chiqish fayllari
+src/test/
+*.md
+LICENSE
+
+# Build jildidagi barcha fayllar, faqat .jar faylidan tashqari
+target/*
+!target/*.jar
