@@ -1,0 +1,32 @@
+version: "3.8"
+services:
+  g52-db:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: g52_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123
+    ports:
+      - "5433:5432"
+
+  g52:
+#    build:
+#      context: .
+#      dockerfile: Dockerfile
+    image: guvalakat/g52:v4
+    ports:
+      - "8080:8080"
+    depends_on:
+      - g52-db
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: "512m"
+        reservations:
+          cpus: "0.2"
+          memory: "256m"
+
+networks:
+  g52-network:
+    driver: bridge

@@ -12,4 +12,9 @@ public class HomeController {
     public String hello() {
         return "Hello Springboot with Docker Application!";
     }
+
+    @GetMapping("/hi")
+    public String hi() {
+        return "Hi Docker-Compose!";
+    }
 }
